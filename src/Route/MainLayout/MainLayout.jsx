@@ -6,7 +6,6 @@ import { Outlet } from "react-router-dom";
 const MainLayout = (props) => {
   return (
     <div>
-      this is the main layout
       <Header></Header>
       <div>
         <Outlet></Outlet>
