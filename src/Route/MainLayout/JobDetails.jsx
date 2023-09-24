@@ -51,7 +51,11 @@ const JobDetails = () => {
         </div>
         <div className="md:col-span-1 border border-solid p-4 border-gray-400 h-80">
           <h2>Job details</h2>
-          <NavLink onClick={handleApply} className={`btn btn-primary`}>
+          <NavLink
+            onClick={handleApply}
+            to={`/applied`}
+            className={`btn btn-primary`}
+          >
             Apply Now
           </NavLink>
         </div>
