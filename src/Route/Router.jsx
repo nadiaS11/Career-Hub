@@ -7,11 +7,14 @@ import Banner from "./MainLayout/Banner";
 import JobsList from "./MainLayout/JobsList";
 import FeaturedJobs from "./MainLayout/FeaturedJobs";
 import JobDetails from "./MainLayout/JobDetails";
+import Register from "./authentications/Register";
+import LogIn from "./authentications/LogIn";
 
 const myCreatedRouter = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+
     children: [
       {
         path: "/",
@@ -30,6 +33,14 @@ const myCreatedRouter = createBrowserRouter([
             element: <FeaturedJobs></FeaturedJobs>,
           },
         ],
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <LogIn></LogIn>,
       },
       {
         path: "/applied",

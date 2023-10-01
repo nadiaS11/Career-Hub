@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
-import { NavLink, Outlet } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { AuthContext } from "../authentications/Auth";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   const links = (
     <>
       <li>
@@ -46,16 +49,25 @@ const Header = () => {
             </ul>
           </div>
           <NavLink className="btn btn-ghost normal-case text-xl">
-            Career Hub{" "}
+            Career Hub
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end">
-          <NavLink className="px-2 py-1 font-semibold text-xl rounded-md  btn-gradient ">
-            Start Applying
-          </NavLink>
+        <div className="navbar-end font-semibold text-xl  ">
+          {user ? (
+            <NavLink to={"/"} className="px-2 py-1  btn-gradient rounded-md ">
+              Register/Login
+            </NavLink>
+          ) : (
+            <NavLink
+              to={"/register"}
+              className="px-2 py-1 btn-gradient rounded-md"
+            >
+              Sign Out
+            </NavLink>
+          )}
         </div>
       </div>
     </div>
